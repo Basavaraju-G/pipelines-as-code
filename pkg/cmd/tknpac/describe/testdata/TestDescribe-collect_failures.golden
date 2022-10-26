@@ -10,3 +10,8 @@ Branch:         TargetBranch
 Commit Title:   A title
 StartTime:       16 minutes ago 
 Duration:       1 minute
+
+Failures:
+• task1:   Failed
+  Error error miss robinson
+
