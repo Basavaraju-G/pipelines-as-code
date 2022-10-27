@@ -42,7 +42,7 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.CONTROLLER_IMAGE_NAME }}
           tags: |
-            type=schedule,pattern={{date 'YYYYMMDD'}}          
+            type=schedule,enable=true,priority=1000,prefix=multiarch-image-,suffix=,pattern=nightly         
 
       - name: Build and push controller docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
