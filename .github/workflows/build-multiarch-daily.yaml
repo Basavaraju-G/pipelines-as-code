@@ -61,7 +61,7 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.WATCHER_IMAGE_NAME }}
           tags: |
-            type=schedule,pattern={{date 'YYYYMMDD'}}
+            type=schedule,enable=true,priority=1000,prefix=multiarch-image-,suffix=,pattern=nightly
       - name: Build and push watcher docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
@@ -79,7 +79,7 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.WEBHOOK_IMAGE_NAME }}
           tags: |
-            type=schedule,pattern={{date 'YYYYMMDD'}}
+            type=schedule,enable=true,priority=1000,prefix=multiarch-image-,suffix=,pattern=nightly
 
       - name: Build and push webhook docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
@@ -98,7 +98,7 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.TKN_PAC_IMAGE_NAME }}
           tags: |
-            type=schedule,pattern={{date 'YYYYMMDD'}}
+            type=schedule,enable=true,priority=1000,prefix=multiarch-image-,suffix=,pattern=nightly
 
       - name: Build and push cli docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
